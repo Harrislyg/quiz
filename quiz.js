@@ -10,9 +10,9 @@ function Question (prompt, answers, correctAnswerIndex) {
 
 // using the new keyword and the constructor we can create questions for the quiz
 var question1 = new Question('How many sea shells are on the sea shore?', ['1', '2', '3', '4'], 0)
-var question2 = new Question('the question', ['answer a', 'answer b', 'answer c', 'answer d'], 2)
-var question3 = new Question('the question', ['answer a', 'answer b', 'answer c', 'answer d'], 4)
-var question4 = new Question('the question', ['answer a', 'answer b', 'answer c', 'answer d'], 3)
+var question2 = new Question('William or Williamnot?', ['William', 'Williamnot', 'No clue', 'Next question'], 2)
+var question3 = new Question('Who is Ariel?', ['Mermaid', 'Gangster', 'Classmate', 'Unicorn'], 4)
+var question4 = new Question('Who am I?', ['Letter', 'Person', 'Organ', 'You'], 3)
 
 
 // we can create an object to represent all of the settings and scores for the quiz
@@ -89,7 +89,7 @@ function restart () {
 // a function to update the display whenever the data changes
 function updateDisplay () {
   if (isGameOver()) {
-    $('h1').text(' gameover. winner is ' + whoWon())
+    $('h1').text(' Gameover: Winner is ' + whoWon())
   } else {
     $('h1').text(quiz.currentQuestion+1 + ') ' + quiz.questions[quiz.currentQuestion].prompt)
     // hard coded display, only has 4 answers at a time. Each is displayed as a button, so can use the order (eg) that they appear in the dom to select them
